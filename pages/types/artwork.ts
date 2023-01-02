@@ -3,16 +3,16 @@ export type ArtworkConcise = {
   title: string;
   date_start: number;
   date_end: number;
-  artist_titles: string[],
-  image_id: string;
-}
+  artist_titles: string[];
+  image_id: string | null;
+};
 
 export type ArtworkConciseDerived = ArtworkConcise & {
   // The compiled URL to a low resolution format of the image
-  image_url_low: string;
+  image_url_low?: string;
   // The compiled URL to a high resolution format of the image
-  image_url_high: string;
-}
+  image_url_high?: string;
+};
 
 export type ArtworkDetailed = ArtworkConciseDerived & {
   date_display: string;
@@ -25,4 +25,4 @@ export type ArtworkDetailed = ArtworkConciseDerived & {
   material_titles: string[];
   latitude: number;
   longitude: number;
-}
+};
