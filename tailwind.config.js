@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        aicRed: "#b50938",
+        "artic-red": "#b50938",
       },
     },
   },
