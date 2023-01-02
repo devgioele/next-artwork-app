@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-start gap-10 p-4 sm:p-6 md:p-10 text-center md:w-10/12 lg:w-9/12">
+      <main className="flex w-full flex-1 flex-col items-center justify-start gap-10 p-4 text-center sm:p-6 md:w-10/12 md:p-10 lg:w-9/12">
         <h1 className="p-3 text-6xl font-bold">
           <a className="text-black" href="https://www.artic.edu/">
             Art Institute of Chicago
@@ -49,39 +49,43 @@ const Home: NextPage = () => {
           {isLoading && <Spinner />}
           {artworks && maxPage && (
             <>
-          <PageControls page={page} maxPage={maxPage} setPage={setPage} />
-            <div className="-mt-6 columns-1 sm:columns-2 md:columns-3 xl:columns-4 space-y-4 sm:space-y-6 lg:space-y-10 gap-4 sm:gap-6 lg:gap-10">
-              {artworks.map((artwork) => (
-                // Apply top margin on first element to achieve height alignment at the top
-                <div className="inline-block w-full first:mt-6">
-                <a
-                  className="group w-full flex flex-col items-center gap-5 rounded rounded-md border bg-white p-5 hover:border-artic-red"
-                  key={artwork.id}
-                >
-                  {artwork.image_url_low ? 
-                      <img
-                    className="rounded w-full group-hover:blur-sm"
-                    src={artwork.image_url_low}
-                  /> : <div className="rounded aspect-square text-lg flex flex-col justify-center items-center group-hover:blur-sm bg-orange-100 p-4 text-slate-800">
-                    No preview available
-                  </div>}
-                  <div className="flex flex-col items-center gap-2">
-                    <p className="font-bold group-hover:text-artic-red">
-                      {artwork.title}
-                    </p>
-                    <p className="">{artwork.artist_titles}</p>
-                    {artwork.date_start && artwork.date_end && (
-                      <p className="rounded rounded-full bg-yellow-500 px-2 ">
-                        {toPeriod(artwork.date_start, artwork.date_end)}
-                      </p>
-                    )}
+              <PageControls page={page} maxPage={maxPage} setPage={setPage} />
+              <div className="-mt-6 columns-1 gap-4 space-y-4 sm:columns-2 sm:gap-6 sm:space-y-6 md:columns-3 lg:gap-10 lg:space-y-10 xl:columns-4">
+                {artworks.map((artwork) => (
+                  // Apply top margin on first element to achieve height alignment at the top
+                  <div
+                    key={artwork.id}
+                    className="inline-block w-full first:mt-6"
+                  >
+                    <a className="group flex w-full flex-col items-center gap-5 rounded rounded-md border bg-white p-5 hover:border-artic-red">
+                      {artwork.image_url_low ? (
+                        <img
+                          alt=""
+                          className="w-full rounded group-hover:blur-sm"
+                          src={artwork.image_url_low}
+                        />
+                      ) : (
+                        <div className="flex aspect-square flex-col items-center justify-center rounded bg-orange-100 p-4 text-lg text-slate-800 group-hover:blur-sm">
+                          No preview available
+                        </div>
+                      )}
+                      <div className="flex flex-col items-center gap-2">
+                        <p className="font-bold group-hover:text-artic-red">
+                          {artwork.title}
+                        </p>
+                        <p className="">{artwork.artist_titles}</p>
+                        {artwork.date_start && artwork.date_end && (
+                          <p className="rounded rounded-full bg-yellow-500 px-2 ">
+                            {toPeriod(artwork.date_start, artwork.date_end)}
+                          </p>
+                        )}
+                      </div>
+                    </a>
                   </div>
-                </a>
-  </div>
-              ))}
-            </div>
-          <PageControls page={page} maxPage={maxPage} setPage={setPage} />
-</>
+                ))}
+              </div>
+              <PageControls page={page} maxPage={maxPage} setPage={setPage} />
+            </>
           )}
         </div>
       </main>
