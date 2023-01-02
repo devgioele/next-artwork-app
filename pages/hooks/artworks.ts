@@ -2,6 +2,9 @@ import useSWR from "swr";
 import { ArtworkConcise, ArtworkConciseDerived } from "../types/artwork";
 
 type ArtworkConciseResponse = {
+  pagination: {
+    total_pages: number;
+  };
   data: ArtworkConcise[];
   info: {
     license_text: string;
@@ -44,6 +47,7 @@ const useArtworks = (limit: number, page: number) => {
 
   return {
     artworks: derived,
+    maxPage: data?.pagination.total_pages,
     isLoading,
     error,
   };
