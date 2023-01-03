@@ -4,6 +4,24 @@ It is a [Next.js 13](https://nextjs.org/) project bootstrapped with [`create-nex
 
 ## Run the web app locally
 
+Install dependencies:
+
+```sh
+npm install
+```
+
+Build the project:
+
+```sh
+npm run build
+```
+
+Run the built project:
+
+```sh
+npm run start
+```
+
 ## Dependencies worth noting
 
 - [SWR](https://swr.vercel.app/) for data fetching
