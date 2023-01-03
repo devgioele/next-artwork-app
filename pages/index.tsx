@@ -38,6 +38,11 @@ const List = () => {
   // Prefetch next page
   const _ = useArtworks(PAGE_SIZE, page + 1, query);
 
+  const handleSubmit = (newQuery: string) => {
+    setQuery(newQuery);
+    setPage(INITIAL_PAGE);
+  };
+
   return (
     <div className="flex h-full min-h-screen flex-col items-center justify-center bg-neutral-100">
       <Head>
@@ -52,7 +57,7 @@ const List = () => {
           </a>
         </h1>
         <div className="flex w-full flex-col items-center gap-10">
-          <SearchBar onSubmit={setQuery} />
+          <SearchBar onSubmit={handleSubmit} />
           {error && (
             <ErrorCard message="Could not load new artworks! Check your internet connection" />
           )}

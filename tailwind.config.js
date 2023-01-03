@@ -7,7 +7,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "artic-red": "#b50938",
+        "artic-red": {
+          dark: "#9d1432",
+          DEFAULT: "#b50938",
+          light: "#cb314a",
+        },
       },
     },
   },

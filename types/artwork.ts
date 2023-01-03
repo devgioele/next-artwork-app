@@ -18,11 +18,13 @@ export type ArtworkDetailed = ArtworkConcise & {
   place_of_origin: string;
   dimensions: string;
   is_on_view: boolean;
-  technique_titles: string;
+  technique_titles: string[];
   theme_titles: string[];
   material_titles: string[];
   latitude: number;
   longitude: number;
+  is_public_domain: boolean;
+  credit_line: string;
 };
 
 export type ArtworkDetailedDerived = ArtworkDetailed & {

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArtworkConciseDerived } from "types/artwork";
+import OptionalImage from "./OptionalImage";
 
 const toPeriod = (start: number, end: number) =>
   start === end ? start : `${start} - ${end}`;
@@ -21,17 +22,11 @@ export default function Gallery({
             href={`/artwork/${artwork.id}`}
             className="group flex w-full flex-col items-center rounded rounded-md border bg-white"
           >
-            {artwork.image_url_low ? (
-              <img
-                alt=""
-                className="w-full rounded-t group-hover:blur-sm"
-                src={artwork.image_url_low}
-              />
-            ) : (
-              <div className="flex aspect-square flex-col items-center justify-center rounded bg-orange-100 p-4 text-lg text-slate-800 group-hover:blur-sm">
-                No preview available
-              </div>
-            )}
+            <OptionalImage
+              src={artwork.image_url_low}
+              unavailable="Preview unavailable"
+              classNameImg="rounded-t"
+            />
             <div className="flex flex-col items-center gap-2 p-5">
               <p className="font-bold group-hover:text-artic-red">
                 {artwork.title}
