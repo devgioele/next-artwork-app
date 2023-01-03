@@ -1,15 +1,9 @@
-import {
-  ChangeEvent,
-  Dispatch,
-  FormEvent,
-  SetStateAction,
-  useState,
-} from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 
 export default function SearchBar({
   onSubmit,
 }: {
-  onSubmit: Dispatch<SetStateAction<string | undefined>>;
+  onSubmit: (query: string) => void;
 }) {
   const [inputValue, setInputValue] = useState("");
 

@@ -85,7 +85,7 @@ export const useArtworks = (limit: number, page: number, query?: string) => {
 
 export const useArtwork = (id: number | null) => {
   const { data, error, isLoading } = useSWR<ArtworkDetailedResponse>(
-    id ? `${baseUrl}/artworks/${id}?fields=${fieldsDetailed}` : null
+    id !== null ? `${baseUrl}/artworks/${id}?fields=${fieldsDetailed}` : null
   );
 
   const derived: ArtworkDetailedDerived | undefined = data?.data && {
