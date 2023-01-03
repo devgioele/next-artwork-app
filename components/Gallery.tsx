@@ -1,4 +1,4 @@
-import { ArtworkConciseDerived } from "../types/artwork";
+import { ArtworkConciseDerived } from "types/artwork";
 
 const toPeriod = (start: number, end: number) =>
   start == end ? start : `${start} - ${end}`;
