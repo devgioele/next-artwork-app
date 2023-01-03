@@ -10,11 +10,9 @@ export type ArtworkConcise = {
 export type ArtworkConciseDerived = ArtworkConcise & {
   // The compiled URL to a low resolution format of the image
   image_url_low?: string;
-  // The compiled URL to a high resolution format of the image
-  image_url_high?: string;
 };
 
-export type ArtworkDetailed = ArtworkConciseDerived & {
+export type ArtworkDetailed = ArtworkConcise & {
   date_display: string;
   artist_display: string;
   place_of_origin: string;
@@ -25,4 +23,9 @@ export type ArtworkDetailed = ArtworkConciseDerived & {
   material_titles: string[];
   latitude: number;
   longitude: number;
+};
+
+export type ArtworkDetailedDerived = ArtworkDetailed & {
+  // The compiled URL to a high resolution format of the image
+  image_url_high?: string;
 };

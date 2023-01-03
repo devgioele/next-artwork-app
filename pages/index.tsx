@@ -36,11 +36,7 @@ const List = () => {
     query
   );
   // Prefetch next page
-  const _ = useArtworks(
-    PAGE_SIZE,
-    page+1,
-    query
-  );
+  const _ = useArtworks(PAGE_SIZE, page + 1, query);
 
   return (
     <div className="flex h-full min-h-screen flex-col items-center justify-center bg-neutral-100">
@@ -82,7 +78,7 @@ const Page: NextPage<{ swrFallback: ArtworkConciseDerived[] }> = ({
   return (
     <SWRConfig
       value={{
-        refreshInterval: 4000,
+        refreshInterval: 30000,
         fetcher,
         fallback: swrFallback,
       }}

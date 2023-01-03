@@ -1,3 +1,13 @@
 extends:
+  - "eslint:recommended"
   - "prettier"
   - "next/core-web-vitals"
+rules:
+  "@next/next/no-img-element": off
+  eqeqeq:
+    - error
+    - always
+  no-unused-vars:
+    - warn
+    - varsIgnorePattern: "^_"
+      argsIgnorePattern: "^_"

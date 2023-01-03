@@ -19,6 +19,7 @@ specifiers:
   swr: ^2.0.0
   tailwindcss: ^3.2.4
   typescript: 4.9.4
+  zod: ^3.20.2
 
 dependencies:
   "@next/font": 13.1.1
@@ -33,6 +34,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   swr: 2.0.0_react@18.2.0
   typescript: 4.9.4
+  zod: 3.20.2
 
 devDependencies:
   autoprefixer: 10.4.13_postcss@8.4.20
@@ -3204,3 +3206,10 @@ packages:
         integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==,
       }
     engines: { node: ">=10" }
+
+  /zod/3.20.2:
+    resolution:
+      {
+        integrity: sha512-1MzNQdAvO+54H+EaK5YpyEy0T+Ejo/7YLHS93G3RnYWh5gaotGHwGeN/ZO687qEDU2y4CdStQYXVHIgrUl5UVQ==,
+      }
+    dev: false

@@ -18,7 +18,7 @@ export default function PageControls({
     <div className="flex items-center justify-center gap-4">
       <button
         className="rounded bg-artic-red px-3 py-1 text-white disabled:bg-neutral-500"
-        disabled={page == 1}
+        disabled={page === 1}
         onClick={decrement}
       >
         ← Prev
@@ -28,7 +28,7 @@ export default function PageControls({
       </div>
       <button
         className="rounded bg-artic-red px-3 py-1 text-white disabled:bg-neutral-500"
-        disabled={page == maxPage}
+        disabled={page === maxPage}
         onClick={increment}
       >
         Next →
