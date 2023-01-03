@@ -4,6 +4,10 @@ It is a [Next.js 13](https://nextjs.org/) project bootstrapped with [`create-nex
 
 ## Run the web app locally
 
+## Dependencies worth noting
+
+- [SWR](https://swr.vercel.app/) for data fetching
+
 ## Requirements
 
 The goal of this exercise is to create a website that has two screens.
