@@ -17,7 +17,10 @@ export default function Gallery({
           // Apply top margin on first element to achieve height alignment at the top
           className="inline-block w-full first:mt-6"
         >
-          <Link href={`/artwork/${artwork.id}`} className="group flex w-full flex-col items-center rounded rounded-md border bg-white">
+          <Link
+            href={`/artwork/${artwork.id}`}
+            className="group flex w-full flex-col items-center rounded rounded-md border bg-white"
+          >
             {artwork.image_url_low ? (
               <img
                 alt=""

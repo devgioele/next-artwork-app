@@ -6,20 +6,13 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { SWRConfig } from "swr";
-import { z } from "zod";
 
-const schemaParams = z.object({
-  id: z.number(),
-});
-
-const useArtworkRouter = (): { id: number | null | undefined } => {
+const useArtworkRouter = (): { id: number | undefined } => {
   const router = useRouter();
-  if (router.query.id) {
-    const converted = {
-      id: parseInt(router.query.id as string),
+  if (typeof router.query.id === 'string') {
+    return {
+      id: parseInt(router.query.id),
     };
-    const result = schemaParams.safeParse(converted);
-    return result.success ? result.data : { id: null };
   } else {
     // If prerendering on the server
     return { id: undefined };
@@ -31,10 +24,10 @@ const Details = () => {
   const { artwork, error, isLoading } = useArtwork(id || null);
 
   let content;
-  if (id === null) {
+  if(id !== undefined && isNaN(id)) {
     content = <ErrorCard message="Invalid artwork ID!" />;
-  } else if (id) {
-    content = <div>{id}</div>;
+  } else if(id) {
+    content = <>{id}</>; 
   }
 
   return (

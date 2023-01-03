@@ -1,4 +1,10 @@
-import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useState } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  FormEvent,
+  SetStateAction,
+  useState,
+} from "react";
 
 export default function SearchBar({
   onSubmit,
