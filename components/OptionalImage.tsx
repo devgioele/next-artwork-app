@@ -20,7 +20,7 @@ export default function OptionalImage({
   ) : (
     <div
       className={clsx(
-        "flex aspect-square flex-col items-center justify-center rounded bg-orange-100 p-4 text-lg text-slate-800 group-hover:blur-sm",
+        "flex aspect-square w-full flex-col items-center justify-center bg-orange-100 p-4 text-lg text-slate-800 group-hover:blur-sm",
         classNameUnavailable
       )}
     >

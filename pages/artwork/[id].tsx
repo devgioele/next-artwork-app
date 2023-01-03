@@ -83,6 +83,7 @@ const Details = () => {
                     src={artwork.image_url_high}
                     unavailable="Image unavailable"
                     classNameImg="rounded"
+                    classNameUnavailable="rounded"
                   />
                   <table className="w-full table-auto border-collapse text-center">
                     <tbody className="align-baseline">

@@ -26,6 +26,7 @@ export default function Gallery({
               src={artwork.image_url_low}
               unavailable="Preview unavailable"
               classNameImg="rounded-t"
+              classNameUnavailable="rounded-t"
             />
             <div className="flex flex-col items-center gap-2 p-5">
               <p className="font-bold group-hover:text-artic-red">
