@@ -16,7 +16,7 @@ export const PAGE_SIZE = 12;
 export const INITIAL_PAGE = 1;
 
 // Load artworks on the server side so that the gallery is preloaded
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { artworks, url } = await fetchArtworks(PAGE_SIZE, INITIAL_PAGE);
   return {
     props: {
