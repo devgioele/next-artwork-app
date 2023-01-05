@@ -1,4 +1,7 @@
-# Ignore artifacts
+# Artifacts
 node_modules
 .next
 public
+
+# Automatically generated files
+pnpm-lock.yaml

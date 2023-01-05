@@ -1,16 +1,16 @@
-import useSWR from "swr";
+import useSWR from 'swr';
 import {
   ArtworkConcise,
   ArtworkConciseDerived,
   ArtworkDetailed,
   ArtworkDetailedDerived,
-} from "types/artwork";
-import fetcher from "data/base";
+} from 'types/artwork';
+import fetcher from 'data/base';
 
-const baseUrl = "https://api.artic.edu/api/v1";
-const fieldsConcise = "id,title,date_start,date_end,artist_titles,image_id";
+const baseUrl = 'https://api.artic.edu/api/v1';
+const fieldsConcise = 'id,title,date_start,date_end,artist_titles,image_id';
 const fieldsDetailed =
-  "id,title,date_start,date_end,artist_titles,image_id,date_display,artist_display,place_of_origin,dimensions,is_on_view,technique_titles,theme_titles,material_titles,latitude,longitude";
+  'id,title,date_start,date_end,artist_titles,image_id,date_display,artist_display,place_of_origin,dimensions,is_on_view,technique_titles,theme_titles,material_titles,latitude,longitude';
 
 type ArticResponse<T> = {
   info: {

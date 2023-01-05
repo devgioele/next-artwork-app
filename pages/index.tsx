@@ -1,16 +1,16 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import { useState } from "react";
-import Spinner from "components/Spinner";
-import ErrorCard from "components/ErrorCard";
-import PageControls from "components/PageControls";
-import SearchBar from "components/SearchBar";
-import Gallery from "components/Gallery";
-import Footer from "components/Footer";
-import { fetchArtworks, useArtworks } from "data/artworks";
-import { SWRConfig } from "swr";
-import fetcher from "data/base";
-import { ArtworkConciseDerived } from "types/artwork";
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { useState } from 'react';
+import Spinner from 'components/Spinner';
+import ErrorCard from 'components/ErrorCard';
+import PageControls from 'components/PageControls';
+import SearchBar from 'components/SearchBar';
+import Gallery from 'components/Gallery';
+import Footer from 'components/Footer';
+import { fetchArtworks, useArtworks } from 'data/artworks';
+import { SWRConfig } from 'swr';
+import fetcher from 'data/base';
+import { ArtworkConciseDerived } from 'types/artwork';
 
 export const PAGE_SIZE = 12;
 export const INITIAL_PAGE = 1;
@@ -46,22 +46,22 @@ const List = () => {
   };
 
   return (
-    <div className="flex h-full min-h-screen flex-col items-center justify-center bg-neutral-100">
+    <div className='flex h-full min-h-screen flex-col items-center justify-center bg-neutral-100'>
       <Head>
         <title>Artworks Next App</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className="flex w-full flex-1 flex-col items-center justify-start gap-10 p-4 text-center sm:p-6 md:w-10/12 md:p-10 lg:w-9/12">
-        <h1 className="p-3 text-6xl font-bold">
-          <a className="text-black" href="https://www.artic.edu/">
+      <main className='flex w-full flex-1 flex-col items-center justify-start gap-10 p-4 text-center sm:p-6 md:w-10/12 md:p-10 lg:w-9/12'>
+        <h1 className='p-3 text-6xl font-bold'>
+          <a className='text-black' href='https://www.artic.edu/'>
             Art Institute of Chicago
           </a>
         </h1>
-        <div className="flex w-full flex-col items-center gap-10">
+        <div className='flex w-full flex-col items-center gap-10'>
           <SearchBar onSubmit={handleSubmit} />
           {error && (
-            <ErrorCard message="Could not load new artworks! Check your internet connection" />
+            <ErrorCard message='Could not load new artworks! Check your internet connection' />
           )}
           {isLoading && !artworks && <Spinner />}
           {artworks && maxPage && (
