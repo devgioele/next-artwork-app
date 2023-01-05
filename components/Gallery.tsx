@@ -11,12 +11,12 @@ export default function Gallery({
   artworks: ArtworkConciseDerived[];
 }) {
   return (
-    <div className='-mt-6 columns-1 gap-4 space-y-4 sm:columns-2 sm:gap-6 sm:space-y-6 md:columns-3 lg:gap-10 lg:space-y-10 xl:columns-4'>
+    <div className='-mt-4 columns-1 gap-4 space-y-4 sm:-mt-6 sm:columns-2 sm:gap-6 sm:space-y-6 md:columns-3 lg:-mt-10 lg:gap-10 lg:space-y-10 xl:columns-4'>
       {artworks.map((artwork) => (
         <div
           key={artwork.id}
           // Apply top margin on first element to achieve height alignment at the top
-          className='inline-block w-full first:mt-6'
+          className='inline-block w-full first:mt-4 sm:first:mt-6 lg:first:mt-10'
         >
           <Link
             href={`/artwork/${artwork.id}`}
