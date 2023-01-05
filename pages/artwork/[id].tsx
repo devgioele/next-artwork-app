@@ -49,14 +49,6 @@ const Details = () => {
     Credits: artwork.credit_line || 'none',
   };
 
-  console.log('valid', valid);
-  console.log('id', id);
-  console.log('routerError', routerError);
-
-  console.log('artwork', artwork);
-  console.log('error', error);
-  console.log('isLoading', isLoading);
-
   let content;
   if (valid) {
     if (error) {

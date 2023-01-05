@@ -19,3 +19,4 @@ rules:
       argsIgnorePattern: '^_'
       caughtErrorsIgnorePattern: '^_'
       destructuredArrayIgnorePattern: '^_'
+  no-console: warn
