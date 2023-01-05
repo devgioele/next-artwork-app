@@ -40,9 +40,9 @@ const Details = () => {
     'Place of origin': artwork.place_of_origin || 'unknown',
     Dimensions: artwork.dimensions || 'unavailable',
     'On display': boolToStr(artwork.is_on_view),
-    Techniques: artwork.technique_titles.join(', ') || 'unknown',
+    Techniques: artwork.technique_titles.join(', ') || 'unspecified',
     Theme: artwork.theme_titles.join(', ') || 'none',
-    Materials: artwork.material_titles.join(', ') || 'none',
+    Materials: artwork.material_titles.join(', ') || 'unspecified',
     'GPS (lat/lon)':
       toGps(artwork.latitude, artwork.longitude, 6) || 'unavailable',
     'Public domain': boolToStr(artwork.is_public_domain),
