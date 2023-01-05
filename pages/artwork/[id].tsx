@@ -9,7 +9,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SWRConfig } from 'swr';
-import { StringIndexable } from 'types/common';
 import { boolToStr, toGps } from 'utils/conversion';
 
 const useArtworkRouter = ():
@@ -35,7 +34,7 @@ const Details = () => {
   const { valid, id, error: routerError } = useArtworkRouter();
   const { artwork, error, isLoading } = useArtwork(id || null);
 
-  const tableData: StringIndexable<string | number> | undefined = artwork && {
+  const tableData: Record<string, string | number> | undefined = artwork && {
     Period: artwork.date_display || 'unknown',
     'Place of origin': artwork.place_of_origin || 'unknown',
     Dimensions: artwork.dimensions || 'unavailable',
