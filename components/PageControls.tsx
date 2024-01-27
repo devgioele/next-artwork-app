@@ -1,14 +1,16 @@
 import { Dispatch, SetStateAction } from 'react';
 
+export type PageControlsProps = {
+  page: number;
+  setPage: Dispatch<SetStateAction<number>>;
+  maxPage: number;
+}
+
 export default function PageControls({
   page,
   setPage,
   maxPage,
-}: {
-  page: number;
-  setPage: Dispatch<SetStateAction<number>>;
-  maxPage: number;
-}) {
+}: PageControlsProps) {
   const decrement = () =>
     setPage((prevPage) => (prevPage > 1 ? prevPage - 1 : prevPage));
   const increment = () =>
