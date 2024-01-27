@@ -58,7 +58,6 @@ export const fetchArtworks = async (
 Optionally accepting a search query, in which case artworks are searched and sorted
 in descending order according to their matching score. */
 export const useArtworks = (limit: number, page: number, query?: string) => {
-  console.log('using artworks, page', page)
   const { data, error, isLoading } = useSWR<ArtworkConciseResponse>(
     compileUrlConcise(limit, page, query)
   );
